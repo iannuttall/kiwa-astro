@@ -1,0 +1,63 @@
+{
+  "name": "kiwa-astro",
+  "version": "0.1.0",
+  "description": "Convert Kiwa UI components and blocks to Astro.",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "author": "Ian Nuttall",
+  "homepage": "https://github.com/iannuttall/kiwa-astro#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iannuttall/kiwa-astro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iannuttall/kiwa-astro/issues"
+  },
+  "keywords": [
+    "astro",
+    "kiwa-ui",
+    "kiwa",
+    "hono-jsx",
+    "components",
+    "cli"
+  ],
+  "packageManager": "pnpm@10.1.0",
+  "bin": {
+    "kiwa-astro": "./bin/kiwa-astro"
+  },
+  "files": [
+    "bin/kiwa-astro",
+    "dist/cli.js",
+    "dist/commands",
+    "dist/config.js",
+    "dist/converter",
+    "dist/convert.js",
+    "dist/install.js",
+    "dist/package-manager.js",
+    "dist/paths.js",
+    "dist/registry.js",
+    "dist/templates.js",
+    "dist/util.js"
+  ],
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsc -p tsconfig.json",
+    "prepack": "pnpm build",
+    "test": "pnpm build && node --test dist/tests/convert.test.js",
+    "test:integration": "pnpm build && node --test dist/tests/integration.test.js",
+    "test:registry": "pnpm build && node --test dist/tests/registry.test.js",
+    "test:all": "pnpm test && pnpm test:integration && pnpm test:registry"
+  },
+  "dependencies": {
+    "kleur": "^4.1.5",
+    "typescript": "^5.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

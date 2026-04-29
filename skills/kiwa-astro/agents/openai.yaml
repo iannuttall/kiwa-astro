@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kiwa Astro"
+  short_description: "Add Kiwa UI components to Astro"
+  default_prompt: "Use $kiwa-astro to add Kiwa UI components to my Astro project and verify they build."

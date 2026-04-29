@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="$(cd -P "$DIR/.." && pwd)"
+
+exec node "$ROOT/dist/cli.js" "$@"
